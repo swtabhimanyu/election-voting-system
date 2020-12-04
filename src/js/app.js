@@ -59,8 +59,10 @@ App = {
     var electionInstance;
     var loader = $("#loader");
     var content = $("#content");
+    var votedSucessfully=$('#sucessful-vote');
 
     loader.show();
+    votedSucessfully.hide();
     content.hide();
 
     // Load account data
@@ -106,6 +108,7 @@ App = {
         $('form').hide();
       }
       loader.hide();
+      votedSucessfully.hide();
       content.show();
     })
     .catch(function(error) {
@@ -120,7 +123,11 @@ App = {
     }).then(function(result) {
       // Wait for votes to update
       $("#content").hide();
-      $("#loader").show();
+      // $("#loader").show();
+      $("#sucessful-vote").show();
+      window.setTimeout(function(){
+        location.reload();
+      },1000);
     }).catch(function(err) {
       console.error(err);
     });
