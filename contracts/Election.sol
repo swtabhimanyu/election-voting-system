@@ -5,6 +5,7 @@ contract Election{
     struct Candidate{
         uint id;
         string name;
+        string party;
         uint voteCount;
     }
 
@@ -17,17 +18,17 @@ contract Election{
     uint public candidatesCount;
 
     
-    function addCandidate(string memory _name) private{
+    function addCandidate(string memory _name,string memory _party) private{
         candidatesCount++;
-        candidates[candidatesCount]=Candidate(candidatesCount,_name,0);
+        candidates[candidatesCount]=Candidate(candidatesCount,_name,_party,0);
     }
 
 
 
 
     constructor () public{
-        addCandidate("Narendra Modi");
-        addCandidate("Rahul Gandhi");
+        addCandidate("Narendra Modi","BJP");
+        addCandidate("Rahul Gandhi","Congress");
     }
 
     function vote(uint _candidateId) public{
