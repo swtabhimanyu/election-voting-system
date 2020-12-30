@@ -88,17 +88,10 @@ App = {
           var id = candidate[0];
           var name = candidate[1];
           var party=candidate[2];
-          var voteCount = candidate[3];
-          var logo="";
-
-          // Render candidate Result
-          if(party==="BJP"){
-            logo="../images/bjp_logo.png";
-          }
-          else{
-            logo="../images/congress_logo.png";
-          }
-          var candidateTemplate = "<tr><th>" + id + "</th><td>"+ '<img id="party_logo" src="'+logo+'">'+"</td><td>"+ party+"</td><td>"+ name + "</td><td>" + voteCount + "</td></tr>"
+          var logo=candidate[3];
+          var voteCount = candidate[4];
+          
+          var candidateTemplate = "<tr><th>" + id + "</th><td>"+ '<img id="party_logo" src="../images/'+logo+'">'+"</td><td>"+ party+"</td><td>"+ name + "</td><td>" + voteCount + "</td></tr>"
           candidatesResults.append(candidateTemplate);
 
           // Render candidate ballot option

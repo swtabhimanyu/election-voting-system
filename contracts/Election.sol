@@ -6,6 +6,7 @@ contract Election{
         uint id;
         string name;
         string party;
+        string party_logo;
         uint voteCount;
     }
 
@@ -18,17 +19,17 @@ contract Election{
     uint public candidatesCount;
 
     
-    function addCandidate(string memory _name,string memory _party) private{
+    function addCandidate(string memory _name,string memory _party,string memory _party_logo) private{
         candidatesCount++;
-        candidates[candidatesCount]=Candidate(candidatesCount,_name,_party,0);
+        candidates[candidatesCount]=Candidate(candidatesCount,_name,_party,_party_logo,0);
     }
 
 
 
 
     constructor () public{
-        addCandidate("Narendra Modi","BJP");
-        addCandidate("Rahul Gandhi","Congress");
+        addCandidate("Narendra Modi","BJP","bjp_logo.png");
+        addCandidate("Rahul Gandhi","Congress","congress_logo.png");
     }
 
     function vote(uint _candidateId) public{
