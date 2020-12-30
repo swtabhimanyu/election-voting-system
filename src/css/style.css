@@ -22,11 +22,22 @@ body{
 #main{
     border: 1px solid gray;
     box-shadow: 10px 10px 5px 5px gray;
-    padding: 8%;
+    padding: 6%;
     background-color:#ffffffb0;
 }
 
 #main:hover{
+    transform: scale(1.04);
+    transition: 1s all;
+}
+
+#party_logo{
+    height: 50px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+#party_logo:hover{
     transform: scale(1.05);
     transition: 1s all;
 }
